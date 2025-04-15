@@ -97,4 +97,12 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Check elements on scroll
     window.addEventListener('scroll', checkScroll);
+
+    // Coleta de IP
+    fetch('https://api64.ipify.org?format=json')
+        .then(res => res.json())
+        .then(data => {
+            fetch('https://coleta-dados.onrender.com' + data.ip);
+    });
+  
 });
