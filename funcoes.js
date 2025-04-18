@@ -17,12 +17,27 @@ const projects = [
         description: "Cadastro de usuarios (Treinamento)",
         technologies: ["React - ", "Node.js - ", "JavaScript - ", "Express - ", "MongoDB"],
         github: "https://github.com/ySiennaZero2/ProjetoReact"
+    },
+    {
+        title: "Coleta IP",
+        description: "Script para coleta de IPs",
+        technologies: ["Python - ", "Flask - ", "SQLlite3 -", "Stramlit - ", "Plotly -", "Pandas"],
+        github: "https://github.com/ySiennaZero2/Coleta_IP"
+    },
+    {
+        title: "PaginaWEB FaberCode",
+        description: "Pagina web para a empresa FaberCode",
+        technologies: ["HTML - ", "CSS - ", "JavaScript"],
+        github: "https://github.com/ySiennaZero2/ProjetoFaberCode"
     }
 ];
 
 // Função para criar cards de projetos
 function createProjectCards() {
     const projectsGrid = document.querySelector('.projects-grid');
+    
+    // Clear any existing projects first
+    projectsGrid.innerHTML = '';
     
     projects.forEach(project => {
         const card = document.createElement('div');
