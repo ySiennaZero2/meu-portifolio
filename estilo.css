@@ -134,6 +134,7 @@ section {
     background-color: var(--light-color);
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    width: 100%;
 }
 
 .skill-card i {
@@ -211,12 +212,14 @@ footer {
 .sobre-content {
     display: flex;
     align-items: center;
-    gap: 4rem;
+    gap: 3rem;
     margin: 2rem 0;
 }
 
 .sobre-text {
     flex: 1;
+    /* Removendo o margin-left negativo que pode causar problemas em telas pequenas */
+    margin-left: 0;
 }
 
 .profile-image {
@@ -224,7 +227,8 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: 100px;
+    /* Ajustando a margem para ser responsiva */
+    margin-left: 0;
 }
 
 .profile-image img {
@@ -253,19 +257,87 @@ footer {
 }
 
 /* Add media query for responsive design */
+/* Melhorando a responsividade para dispositivos móveis */
 @media (max-width: 768px) {
     .sobre-content {
         flex-direction: column;
         text-align: center;
+        gap: 1rem;
     }
 
     .profile-image img {
         width: 250px;
         height: 250px;
-        margin-top: 2rem;
-        margin-right: 400px;
+        margin-top: 1rem;
+        /* Removendo margin-right excessiva */
+        margin-right: 0;
     }
-    .skills{
+    
+    .skills {
         flex-direction: column;
+        align-items: center;
+    }
+    
+    /* Ajustando o header para mobile */
+    nav ul {
+        align-items: center;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+    
+    /* Ajustando seções para mobile */
+    section {
+        padding: 60px 0;
+        min-height: auto;
+    }
+    #home h1 {
+        font-size: 2rem;
+        margin-top: 20px;
+    }
+    
+    #home p {
+        font-size: 1rem;
+    }
+    
+    /* Ajustando projetos para mobile */
+    .projects-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Ajustando contato para mobile */
+    .contact-info {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    
+    .contact-info a {
+        font-size: 3rem;
+    }
+    
+    /* Ajustando tecnologias estudadas para mobile */
+    #tecnologias-estudadas .skill-card {
+        min-width: 150px;
+    }
+}
+
+/* Adicionando breakpoint para telas muito pequenas */
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .profile-image img {
+        width: 200px;
+        height: 200px;
+    }
+    
+    .btn {
+        padding: 10px 20px;
+        display: block;
+        margin: 10px auto;
+        width: 80%;
     }
 }
