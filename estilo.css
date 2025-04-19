@@ -278,7 +278,7 @@ footer {
 /* Melhorando a responsividade para dispositivos móveis */
 @media (max-width: 768px) {
     .sobre-content {
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
         gap: 1rem;
     }
