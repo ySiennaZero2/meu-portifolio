@@ -19,6 +19,12 @@ const projects = [
         github: "https://github.com/ySiennaZero2/ProjetoReact"
     },
     {
+        title: "Projeto React + Vite + Axios",
+        description: "Previsão do tempo (Treinamento)",
+        technologies: ["React - ", "Vite - ", "JavaScript - ", "Axios - ", "API"],
+        github: "https://github.com/ySiennaZero2/Previs-o_Tempo"
+    },
+    {
         title: "Coleta IP",
         description: "Script para coleta de IPs",
         technologies: ["Python - ", "Flask - ", "SQLlite3 -", "Stramlit - ", "Plotly -", "Pandas"],
