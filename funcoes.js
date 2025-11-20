@@ -25,6 +25,12 @@ const projects = [
         github: "https://github.com/ySiennaZero2/Previs-o_Tempo"
     },
     {
+        title: "Utilitário Suporte Técnico",
+        description: "Aplicativo para auxiliar no suporte técnico remoto",
+        technologies: ["Python - ", "customtkinter - ", "pyautoGUI - ", "pyperclip - ", "webbrowser"],
+        github: "https://github.com/ySiennaZero2/PainelConfig"
+    },
+    {
         title: "Coleta IP",
         description: "Script para coleta de IPs",
         technologies: ["Python - ", "Flask - ", "SQLlite3 -", "Stramlit - ", "Plotly -", "Pandas"],
