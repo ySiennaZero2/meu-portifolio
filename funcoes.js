@@ -133,3 +133,49 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   
 });
+
+    // Simple carousel/nav for project gallery (works with .project-carousel markup)
+    document.addEventListener('DOMContentLoaded', () => {
+        const carousel = document.querySelector('.project-carousel');
+        if (!carousel) return;
+        const track = carousel.querySelector('.carousel-track');
+        const items = track.querySelectorAll('.carousel-item');
+        const prev = carousel.querySelector('.carousel-btn.prev');
+        const next = carousel.querySelector('.carousel-btn.next');
+        let index = 0;
+
+        function scrollToIndex(i) {
+            const item = items[i];
+            if (!item) return;
+            const left = item.offsetLeft - track.offsetLeft - (track.clientWidth - item.clientWidth) / 2;
+            track.scrollTo({ left, behavior: 'smooth' });
+        }
+
+        prev.addEventListener('click', () => {
+            index = Math.max(0, index - 1);
+            scrollToIndex(index);
+        });
+
+        next.addEventListener('click', () => {
+            index = Math.min(items.length - 1, index + 1);
+            scrollToIndex(index);
+        });
+
+        // Update index on manual scroll
+        let isScrolling;
+        track.addEventListener('scroll', () => {
+            window.clearTimeout(isScrolling);
+            isScrolling = setTimeout(() => {
+                // find the nearest item to the center
+                const center = track.scrollLeft + track.clientWidth / 2;
+                let nearest = 0;
+                let nearestDist = Infinity;
+                items.forEach((it, idx) => {
+                    const itCenter = it.offsetLeft + it.clientWidth / 2;
+                    const dist = Math.abs(center - itCenter);
+                    if (dist < nearestDist) { nearestDist = dist; nearest = idx; }
+                });
+                index = nearest;
+            }, 100);
+        });
+    });

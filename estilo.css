@@ -240,7 +240,7 @@ footer {
 
 /* Single continuous gradient background for the main content wrapper */
 #main-content {
-    background: linear-gradient(160deg, #0a0a0a, #292929);
+    background: linear-gradient(160deg, #0a0a0a, #2e2e2e);
     color: var(--light-color);
     background-repeat: no-repeat;
     background-size: cover;
@@ -296,6 +296,85 @@ footer {
 .animate-on-scroll.show {
     opacity: 1;
     transform: translateY(0);
+}
+
+/* Project carousel styles */
+.project-carousel {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    position: relative;
+    margin-top: 1.5rem;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding: 8px 4px;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+}
+
+.carousel-track::-webkit-scrollbar { display: none; }
+.carousel-track { -ms-overflow-style: none; scrollbar-width: none; }
+
+.carousel-item {
+    scroll-snap-align: center;
+    flex: 0 0 390px;
+    height: 300px;
+    border-radius: 12px;
+    background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-color);
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+    box-shadow: 0 0 20px var(--accent-color), 0 8px 20px rgba(0,0,0,0.25);
+}
+
+.carousel-item:hover {
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.45);
+}
+
+.carousel-item img { width: 100%; height: 100%; object-fit: cover; border-radius: 12px; display: block; }
+
+.carousel-placeholder {
+    padding: 1rem;
+    text-align: center;
+    font-weight: 600;
+    opacity: 0.85;
+}
+
+.carousel-btn {
+    background: rgba(0,0,0,0.5);
+    color: var(--accent-color);
+    border: none;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 1.6rem;
+    transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.carousel-btn:hover { background: var(--accent-color); transform: translateY(-2px); }
+
+.carousel-note {
+    margin-top: 12px;
+    opacity: 0.9;
+    font-size: 0.95rem;
+}
+
+@media (max-width: 768px) {
+    .carousel-track { gap: 0; }
+    .carousel-item { flex: 0 0 100%; height: 240px; width: 80px; }
+    .carousel-btn { width: 42px; height: 42px; font-size: 1.4rem; }
 }
 
 /* Add media query for responsive design */
